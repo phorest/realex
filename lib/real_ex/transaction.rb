@@ -98,7 +98,7 @@ module RealEx
             if card.cvv
               c.cvn do |a|
                 a.number card.cvv
-                a.pressind 1
+                a.presind 1
               end
             end
           end

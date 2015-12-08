@@ -46,7 +46,7 @@ describe "RealEx::Transaction" do
   end
 
   it "should build the xml" do
-    @transaction.to_xml.should == "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<request type=\"auth\" timestamp=\"20090326160218\">\n  <merchantid>paul</merchantid>\n  <orderid>1234</orderid>\n  <account>internet</account>\n  <amount currency=\"EUR\">500</amount>\n  <card>\n    <number>4111111111111111</number>\n    <expdate>0802</expdate>\n    <chname>Paul Campbell</chname>\n    <type>VISA</type>\n    <cvn>\n      <number>509</number>\n      <pressind>1</pressind>\n    </cvn>\n  </card>\n  <autosettle flag=\"1\"/>\n  <tssinfo>\n  </tssinfo>\n  <sha1hash>d979885b0a296469d85ada0f08c5577d857142a0</sha1hash>\n</request>\n"
+    @transaction.to_xml.should == "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<request type=\"auth\" timestamp=\"20090326160218\">\n  <merchantid>paul</merchantid>\n  <orderid>1234</orderid>\n  <account>internet</account>\n  <amount currency=\"EUR\">500</amount>\n  <card>\n    <number>4111111111111111</number>\n    <expdate>0802</expdate>\n    <chname>Paul Campbell</chname>\n    <type>VISA</type>\n    <cvn>\n      <number>509</number>\n      <presind>1</presind>\n    </cvn>\n  </card>\n  <autosettle flag=\"1\"/>\n  <tssinfo>\n  </tssinfo>\n  <sha1hash>d979885b0a296469d85ada0f08c5577d857142a0</sha1hash>\n</request>\n"
   end
 
   describe "with addresses" do
@@ -56,7 +56,7 @@ describe "RealEx::Transaction" do
     end
 
     it "should add the addresses into the xml" do
-      @transaction.to_xml.should == "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<request type=\"auth\" timestamp=\"20090326160218\">\n  <merchantid>paul</merchantid>\n  <orderid>1234</orderid>\n  <account>internet</account>\n  <amount currency=\"EUR\">500</amount>\n  <card>\n    <number>4111111111111111</number>\n    <expdate>0802</expdate>\n    <chname>Paul Campbell</chname>\n    <type>VISA</type>\n    <cvn>\n      <number>509</number>\n      <pressind>1</pressind>\n    </cvn>\n  </card>\n  <autosettle flag=\"1\"/>\n  <tssinfo>\n    <address type=\"billing\">\n      <code>Biling Code</code>\n      <country>Billing Country</country>\n    </address>\n    <address type=\"shipping\">\n      <code>Shipping Code</code>\n      <country>Shipping Country</country>\n    </address>\n  </tssinfo>\n  <sha1hash>d979885b0a296469d85ada0f08c5577d857142a0</sha1hash>\n</request>\n"
+      @transaction.to_xml.should == "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<request type=\"auth\" timestamp=\"20090326160218\">\n  <merchantid>paul</merchantid>\n  <orderid>1234</orderid>\n  <account>internet</account>\n  <amount currency=\"EUR\">500</amount>\n  <card>\n    <number>4111111111111111</number>\n    <expdate>0802</expdate>\n    <chname>Paul Campbell</chname>\n    <type>VISA</type>\n    <cvn>\n      <number>509</number>\n      <presind>1</presind>\n    </cvn>\n  </card>\n  <autosettle flag=\"1\"/>\n  <tssinfo>\n    <address type=\"billing\">\n      <code>Biling Code</code>\n      <country>Billing Country</country>\n    </address>\n    <address type=\"shipping\">\n      <code>Shipping Code</code>\n      <country>Shipping Country</country>\n    </address>\n  </tssinfo>\n  <sha1hash>d979885b0a296469d85ada0f08c5577d857142a0</sha1hash>\n</request>\n"
     end
   end
 
@@ -75,7 +75,7 @@ describe "RealEx::Transaction" do
     end
 
     it "should allow a manual request" do
-      @transaction.to_xml.should == "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<request type=\"manual\" timestamp=\"20090326160218\">\n  <merchantid>paul</merchantid>\n  <orderid>1234</orderid>\n  <authcode>123456</authcode>\n  <account>internet</account>\n  <amount currency=\"EUR\">500</amount>\n  <card>\n    <number>4111111111111111</number>\n    <expdate>0802</expdate>\n    <chname>Paul Campbell</chname>\n    <type>VISA</type>\n    <cvn>\n      <number>509</number>\n      <pressind>1</pressind>\n    </cvn>\n  </card>\n  <autosettle flag=\"1\"/>\n  <tssinfo>\n  </tssinfo>\n  <sha1hash>d979885b0a296469d85ada0f08c5577d857142a0</sha1hash>\n</request>\n" 
+      @transaction.to_xml.should == "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<request type=\"manual\" timestamp=\"20090326160218\">\n  <merchantid>paul</merchantid>\n  <orderid>1234</orderid>\n  <authcode>123456</authcode>\n  <account>internet</account>\n  <amount currency=\"EUR\">500</amount>\n  <card>\n    <number>4111111111111111</number>\n    <expdate>0802</expdate>\n    <chname>Paul Campbell</chname>\n    <type>VISA</type>\n    <cvn>\n      <number>509</number>\n      <presind>1</presind>\n    </cvn>\n  </card>\n  <autosettle flag=\"1\"/>\n  <tssinfo>\n  </tssinfo>\n  <sha1hash>d979885b0a296469d85ada0f08c5577d857142a0</sha1hash>\n</request>\n"
     end
   end
 
